@@ -13,6 +13,14 @@ Also available for [Max Payne 3](https://github.com/ThirteenAG/MaxPayne3.FusionF
 
 ![](https://github.com/user-attachments/assets/f9c6c978-3b19-422a-b561-4cf31716620b)
 
+# This fork
+
+The original repository blocks the capability of using the .asi on 1.0.8.0/1.0.7.0 with a non-`xlive.dll` file, in the end, not allowing to play GFWL with this mod enabled. This fork simply removes that check from the code. If any more issues occur with FusionFix and GFWL combo, I will attempt to edit them out.
+
+Keep in mind that you still want additional mods to be used for a pleasant GFWL multiplayer experience, including disabling the mod check to even allow this fork to work.
+
+You can visit the [Grand Theft Auto RevIVal Discord Server](https://discord.gg/gtrf) for more information about GFWL multiplayer and people to play with. You can also use [HappinessMP](https://happinessmp.net/) to play online on Complete Edition (doesn't allow any mods including FusionFix, however)
+
 ## Installation:
 
 > [!NOTE]
