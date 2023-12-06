@@ -4,7 +4,7 @@
 
 # This fork
 
-The original repository blocks the capability of using the .asi on 1.0.8.0/1.0.7.0 with a non-`xlive.dll` file, in the end, not allowing to play GFWL with this mod enabled. This fork simply removes that check from the code. If any more issues occur with FusionFix and GFWL combo, I will attempt to edit them out.
+The original repository blocks the capability of using the .asi on 1.0.8.0/1.0.7.0 with a non-`xlive.dll` file, in the end, not allowing to play GFWL with this mod enabled. This fork simply removes that check from the code and defaults `RecoilFix` to `0`. If any more issues occur with FusionFix and GFWL combo, I will attempt to edit them out.
 
 Keep in mind that you still want additional mods to be used for a pleasant GFWL multiplayer experience, including disabling the mod check to even allow this fork to work.
 
