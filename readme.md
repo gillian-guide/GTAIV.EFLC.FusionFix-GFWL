@@ -1,17 +1,6 @@
-[![Actions Status: Release](https://github.com/ThirteenAG/GTAIV.EFLC.FusionFix/actions/workflows/msvc_x86.yml/badge.svg)](https://github.com/ThirteenAG/GTAIV.EFLC.FusionFix/actions)
-[![AppVeyor](https://img.shields.io/appveyor/build/ThirteenAG/GTAIV-EFLC-FusionFix?label=AppVeyor%20Build&logo=Appveyor&logoColor=white)](https://ci.appveyor.com/project/ThirteenAG/gtaiv-eflc-fusionfix)
-
 <p align="center">
   <img width="400" src="https://github.com/ThirteenAG/GTAIV.EFLC.FusionFix/assets/4904157/f45efc2e-f4f5-4d4d-847b-0f0d19897ef4.png">
 </p>
-
-# GTAIV.EFLC.FusionFix
-
-This projects aims to fix some issues in Grand Theft Auto IV: The Complete Edition.
-
-Also available for [Max Payne 3](https://github.com/ThirteenAG/MaxPayne3.FusionFix#readme) and [other games](https://thirteenag.github.io/wfp).
-
-![](https://github.com/user-attachments/assets/f9c6c978-3b19-422a-b561-4cf31716620b)
 
 # This fork
 
@@ -20,6 +9,18 @@ The original repository blocks the capability of using the .asi on 1.0.8.0/1.0.7
 Keep in mind that you still want additional mods to be used for a pleasant GFWL multiplayer experience, including disabling the mod check to even allow this fork to work.
 
 You can visit the [Grand Theft Auto RevIVal Discord Server](https://discord.gg/gtrf) for more information about GFWL multiplayer and people to play with. You can also use [HappinessMP](https://happinessmp.net/) to play online on Complete Edition (doesn't allow any mods including FusionFix, however)
+
+## Installing this fork
+
+Install the [official release](https://github.com/ThirteenAG/GTAIV.EFLC.FusionFix/releases/latest) first, then this fork's [`.asi`](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/releases/latest) (and `.ini` if you didn't already edit it).
+
+# GTAIV.EFLC.FusionFix
+
+This projects aims to fix some issues in Grand Theft Auto IV: Complete Edition.
+
+Also available for [Max Payne 3](https://github.com/ThirteenAG/MaxPayne3.FusionFix#readme) and [other games](https://thirteenag.github.io/wfp).
+
+![](https://github.com/user-attachments/assets/f9c6c978-3b19-422a-b561-4cf31716620b)
 
 ## Installation:
 
