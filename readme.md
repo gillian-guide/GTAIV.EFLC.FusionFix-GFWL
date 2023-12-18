@@ -6,19 +6,22 @@
 
 **THIS FORK HAS NO RELATION TO THE OFFICIAL REPOSITORY AND IF YOU HAVE ANY ISSUES SPECIFIC TO THIS FORK, DO NOT CREATE AN ISSUE ON THE OFFICIAL REPOSITORY NOR BOTHER FUSION TEAM WITH IT**
 
-**I'M ALSO NOT DOING ANY HEAVY WORK ON THIS FORK, NOR DO I KNOW HOW MODDING WORKS, NOR DO I KNOW HOW TO CODE WITH C++, NOR DO I KNOW HOW TO PORT MODS. DON'T ASK ME TO.**
+**I'M ALSO NOT DOING ANY HEAVY WORK ON THIS FORK, NOR DO I KNOW HOW MODDING WORKS, NOR DO I KNOW HOW TO CODE WITH C++, NOR DO I KNOW HOW DOES ASM WORK, NOR DO I KNOW HOW TO PORT MODS. DON'T ASK ME TO.**
 
 # GFWL Patch (this fork)
 
-The original repository blocks the capability of using the .asi on 1.0.8.0/1.0.7.0 with a non-`xlive.dll` file, in the end, not allowing to play GFWL with this mod enabled. This fork simply removes that check from the code and defaults `RecoilFix` to `0`. If any more issues occur with FusionFix and GFWL combo, I will attempt to edit them out.
+The original repository has no support for GFWL (it does have support for outdated patches themselves, however). This fork attempts to mitigates that with several simple fixes:
+- Disable the `xlive.dll` check to allow playing on outdated patches without `xlive.dll`. (Commit [9d56aba](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/9d56aba3c554777ada839a0feb318897e8771f6c))
+- Fix the missing `Multiplayer` button on the phone by changing a simple check in the `spcellphonemain.sco`. Probably unintentional. (Commit [512e9ad](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/512e9ad67ffa500e8d90ac17ea6ff65ad12a29b6), thanks to [ClaudeIII](https://github.com/ClaudeIII) for helping with the ASM part of the code)
+- Change the default option of `RecoilFix` to 0 to avoid being as disadvantage to other players in the multiplayer. (Commit [dc9eb78](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/dc9eb787490f8f96e3c3b64a368cc7e3eab25088))
 
 Keep in mind that you still want additional mods to be used for a pleasant GFWL multiplayer experience, including disabling the mod check to even allow this fork to work.
 
-You can visit the [Grand Theft Auto RevIVal Discord Server](https://discord.gg/gtrf) for more information about GFWL multiplayer and people to play with. You can also use [HappinessMP](https://happinessmp.net/) to play online on Complete Edition (doesn't allow any mods including FusionFix, however)
+You can visit the [Grand Theft Auto RevIVal Discord Server](https://discord.gg/gtrf) for more information about GFWL multiplayer and people to play with. You can also use [HappinessMP](https://happinessmp.net/) to play online on Complete Edition (doesn't allow any mods including FusionFix, however).
 
 ## Installing the GFWL patch
 
-Install the [official release](https://github.com/ThirteenAG/GTAIV.EFLC.FusionFix/releases/latest) first, then this fork's [`.asi`](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/releases/latest) (and `.ini` if you didn't already edit it).
+Install the [official release](https://github.com/ThirteenAG/GTAIV.EFLC.FusionFix/releases/latest) first, then apply [`this patch`](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/releases/latest) on top of it.
 
 # GTAIV.EFLC.FusionFix
 
