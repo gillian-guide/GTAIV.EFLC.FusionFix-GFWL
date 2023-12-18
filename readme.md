@@ -10,7 +10,8 @@
 
 # GFWL Patch (this fork)
 
-The original repository has no support for GFWL (it does have support for outdated patches themselves, however). This fork attempts to mitigates that with several simple fixes:
+The original repository has no support for GFWL (it does have support for outdated patches themselves, however). This fork attempts to mitigate that with several simple fixes:
+
 - Disable the `xlive.dll` check to allow playing on outdated patches without `xlive.dll`. (Commit [9d56aba](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/9d56aba3c554777ada839a0feb318897e8771f6c))
 - Fix the missing `Multiplayer` button on the phone by changing a simple check in the `spcellphonemain.sco`. Probably unintentional. (Commit [512e9ad](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/512e9ad67ffa500e8d90ac17ea6ff65ad12a29b6), thanks to [ClaudeIII](https://github.com/ClaudeIII) for helping with the ASM part of the code)
 - Change the default option of `RecoilFix` to 0 to avoid being as disadvantage to other players in the multiplayer. (Commit [dc9eb78](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/dc9eb787490f8f96e3c3b64a368cc7e3eab25088))
