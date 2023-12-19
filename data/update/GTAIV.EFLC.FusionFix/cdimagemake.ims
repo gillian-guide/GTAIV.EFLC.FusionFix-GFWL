@@ -8,7 +8,7 @@
 -rebuild
 -close
 
--create "IV\\IV.PhoneFix.img" "3" "IMG_VERSION_3_ENCRYPTION_TYPE_NONE"
+-create "IV\\GTAIV.PhoneFix.img" "3" "IMG_VERSION_3_ENCRYPTION_TYPE_NONE"
 -importFromDirectory "GTAIV.PhoneFix"
 -rebuild
 -close
