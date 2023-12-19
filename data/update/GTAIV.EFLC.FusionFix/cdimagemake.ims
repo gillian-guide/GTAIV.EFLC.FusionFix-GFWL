@@ -8,13 +8,28 @@
 -rebuild
 -close
 
+-create "IV\\IV.PhoneFix.img" "3" "IMG_VERSION_3_ENCRYPTION_TYPE_NONE"
+-importFromDirectory "GTAIV.PhoneFix"
+-rebuild
+-close
+
 -create "TLAD\\TLAD.FusionFix.img" "3" "IMG_VERSION_3_ENCRYPTION_TYPE_NONE"
 -importFromDirectory "TLAD.FusionFix"
 -rebuild
 -close
 
+-create "TLAD\\TLAD.PhoneFix.img" "3" "IMG_VERSION_3_ENCRYPTION_TYPE_NONE"
+-importFromDirectory "TLAD.PhoneFix"
+-rebuild
+-close
+
 -create "TBOGT\\TBOGT.FusionFix.img" "3" "IMG_VERSION_3_ENCRYPTION_TYPE_NONE"
 -importFromDirectory "TBOGT.FusionFix"
+-rebuild
+-close
+
+-create "TBOGT\\TBOGT.PhoneFix.img" "3" "IMG_VERSION_3_ENCRYPTION_TYPE_NONE"
+-importFromDirectory "TBOGT.PhoneFix"
 -rebuild
 -close
 
