@@ -198,7 +198,7 @@ public:
         // VOLATILE! DO NOT CHANGE THE ORDER OF THESE! ONLY WORKS BY SOME MIRACLE.
         static CSetting arr[] = {
             { 0, "PREF_SKIP_INTRO",        "MAIN",       "SkipIntro",                       "",                           1, nullptr, 0, 1 },
-            { 0, "PREF_SKIP_MENU",         "MAIN",       "SkipMenu",                        "",                           1, nullptr, 0, 1 },
+            { 0, "PREF_SKIP_MENU",         "MAIN",       "SkipMenu",                        "",                           0, nullptr, 0, 1 },
             { 0, "PREF_BORDERLESS",        "MAIN",       "BorderlessWindowed",              "",                           1, nullptr, 0, 1 },
             { 0, "PREF_FPS_LIMIT_PRESET",  "FRAMELIMIT", "FpsLimitPreset",                  "MENU_DISPLAY_FRAMELIMIT",    0, nullptr, FpsCaps.eOFF, std::distance(std::begin(FpsCaps.data), std::end(FpsCaps.data)) - 1 },
             { 0, "PREF_BLOOM",             "MAIN",       "Bloom",                           "",                           1, nullptr, 0, 1 },
