@@ -13,12 +13,13 @@
 The original repository has no support for GFWL (it does have support for outdated patches themselves, however). This fork attempts to mitigate that with several simple fixes:
 
 - Disable the `xlive.dll` check to allow playing on outdated patches without `xlive.dll`. (Commit [9d56aba](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/9d56aba3c554777ada839a0feb318897e8771f6c))
-- Fix the missing `Multiplayer` button on the phone by changing a simple check in the `spcellphonemain.sco`. Probably unintentional. (Commit [512e9ad](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/512e9ad67ffa500e8d90ac17ea6ff65ad12a29b6), thanks to [ClaudeIII](https://github.com/ClaudeIII) for helping with the ASM part of the code)
+- Fix the missing `Multiplayer` button on the phone by changing a simple check in the `spcellphonemain.sco`. Probably unintentional. (Commits [512e9ad](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/512e9ad67ffa500e8d90ac17ea6ff65ad12a29b6), [9800c9c](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/9800c9c28182bbff88363f3482e4776185641a41) and [0b3a699](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/0b3a699f938d5d6d981e9cafd39af7e82d8aec4d), thanks to [ClaudeIII](https://github.com/ClaudeIII) for helping with the ASM part of the code)
 - Change the default option of `RecoilFix` to 0 to avoid being as disadvantage to other players in the multiplayer. (Commit [dc9eb78](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/dc9eb787490f8f96e3c3b64a368cc7e3eab25088))
+- Change the default option of `SkipMenu` to 0 to be able to load into DLC's first. (Commit [61e1041](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/61e104173cb7d4dcab274094b9d6f76d5611db05))
 
 Keep in mind that you still want additional mods to be used for a pleasant GFWL multiplayer experience, including disabling the mod check to even allow this fork to work.
 
-You can visit the [Grand Theft Auto RevIVal Discord Server](https://discord.gg/gtrf) for more information about GFWL multiplayer and people to play with. You can also use [HappinessMP](https://happinessmp.net/) to play online on Complete Edition (doesn't allow any mods including FusionFix, however).
+You can visit the [Grand Theft Auto RevIVal Discord Server](https://discord.gg/gtrf) for more information about GFWL multiplayer and people to play with (this patch was also made for these guys). You can also use [HappinessMP](https://happinessmp.net/) to play online on Complete Edition (doesn't allow any mods including FusionFix, however).
 
 ## Installing the GFWL patch
 
