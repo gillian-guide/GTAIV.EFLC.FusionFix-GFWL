@@ -29,11 +29,7 @@
 -close
 
 -create "TBOGT\\!TBOGT.PhoneFix.img" "3" "IMG_VERSION_3_ENCRYPTION_TYPE_NONE"
-<<<<<<< HEAD
--importFromDirectory "TBOGT.PhoneFix"
-=======
 -importFromDirectory "TBOGT.GFWLPatch"
->>>>>>> 5ca56ac (Remove the new `xlive.dll` check)
 -rebuild
 -close
 
