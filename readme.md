@@ -23,11 +23,19 @@ Keep in mind that you still want additional mods to be used for a pleasant GFWL 
 
 You can visit the [Grand Theft Auto RevIVal Discord Server](https://discord.gg/gtrf) for more information about GFWL multiplayer and people to play with (this patch was also made for these guys). You can also use [HappinessMP](https://happinessmp.net/) to play online on Complete Edition (doesn't allow any mods including FusionFix, however).
 
-## Installing the GFWL patch
+## Installing the GFWL Patch
 
 Install the [official release](https://github.com/ThirteenAG/GTAIV.EFLC.FusionFix/releases/latest) first, then apply [this patch](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/releases/latest) on top of it.
 
-Alternatively, you can manually build the whole mod using this fork. Launch `premake5.bat`, build the Visual Studio project in `build` however you like, then use the `release.bat` and manually separate the mod files from the `data` folder.
+## Compiling FusionFix + GFWL Patch manually
+
+I include the rest of the original repository for the purposes of compiling the mod manually (including the patch) if you wish to do so.
+
+1. Clone this fork (`git clone https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL.git`).
+2. Open `premake5.bat` to generate a compileable Visual Studio project.
+3. Compile the project in `build` with whatever tools you prefer.
+4. Launch `release.bat` and wait for it to finish.
+5. The complete thing *should* be in the `release` folder.
 
 # GTAIV.EFLC.FusionFix
 
