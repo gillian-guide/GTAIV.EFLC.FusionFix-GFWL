@@ -12,10 +12,12 @@
 
 The original repository has no support for GFWL (it does have support for outdated patches themselves, however). This fork attempts to mitigate that with several simple fixes:
 
-- Disable the `xlive.dll` check to allow playing on outdated patches without `xlive.dll`. (Commit [9d56aba](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/9d56aba3c554777ada839a0feb318897e8771f6c))
-- Fix the missing `Multiplayer` button on the phone by changing a simple check in the `spcellphonemain.sco` and `spcellphonenetwork.sco`. Probably unintentional. Editing the `spcellphonetutorial.sco` also made the multiplayer tutorial somewhat functional. (Commits [512e9ad](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/512e9ad67ffa500e8d90ac17ea6ff65ad12a29b6), [9800c9c](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/9800c9c28182bbff88363f3482e4776185641a41) and [0b3a699](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/0b3a699f938d5d6d981e9cafd39af7e82d8aec4d), thanks to [ClaudeIII](https://github.com/ClaudeIII) for helping with the ASM part of the code)
+- Disable the `xlive.dll` check to allow playing on outdated patches without `xlive.dll`. (Commits [9d56aba](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/9d56aba3c554777ada839a0feb318897e8771f6c) and [5ca56ac](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/5ca56acd11138f9a4bcc77006ad2f2f62c824159))
+- Fix the missing `Multiplayer` button on the phone by changing a simple check in the `spcellphonemain.sco` and `spcellphonenetwork.sco`. (Commits [512e9ad](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/512e9ad67ffa500e8d90ac17ea6ff65ad12a29b6), [9800c9c](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/9800c9c28182bbff88363f3482e4776185641a41), [0b3a699](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/0b3a699f938d5d6d981e9cafd39af7e82d8aec4d) and and [0b3a699](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/0b3a699f938d5d6d981e9cafd39af7e82d8aec4d). Thanks to [ClaudeIII](https://github.com/ClaudeIII) for helping with the ASM part of the code)
+- Fix the Multiplayer Tutorial. Editing the `spcellphonetutorial.sco` and `multitutorial.sco` made the multiplayer tutorial somewhat functional. (Commits [9800c9c](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/9800c9c28182bbff88363f3482e4776185641a41), [0b3a699](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/0b3a699f938d5d6d981e9cafd39af7e82d8aec4d) and [5ca56ac](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/5ca56acd11138f9a4bcc77006ad2f2f62c824159). Thanks to [sTc2201](https://github.com/sTc2201) for providing the `multitutorial.sco` fixes)
 - Change the default option of `RecoilFix` to 0 to avoid being as disadvantage to other players in the multiplayer. (Commit [dc9eb78](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/dc9eb787490f8f96e3c3b64a368cc7e3eab25088))
 - Change the default option of `SkipMenu` to 0 to be able to load into DLC's first. (Commit [61e1041](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/61e104173cb7d4dcab274094b9d6f76d5611db05))
+- Remove `FusionTrees.img` (when building on your own) to combat the issues in Multiplayer. (Commit [5ca56ac](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/5ca56acd11138f9a4bcc77006ad2f2f62c824159))
 
 Keep in mind that you still want additional mods to be used for a pleasant GFWL multiplayer experience, including disabling the mod check to even allow this fork to work.
 
@@ -24,6 +26,8 @@ You can visit the [Grand Theft Auto RevIVal Discord Server](https://discord.gg/g
 ## Installing the GFWL patch
 
 Install the [official release](https://github.com/ThirteenAG/GTAIV.EFLC.FusionFix/releases/latest) first, then apply [this patch](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/releases/latest) on top of it.
+
+Alternatively, you can manually build the whole mod using this fork. Launch `premake5.bat`, build the Visual Studio project in `build` however you like, then use the `release.bat` and manually separate the mod files from the `data` folder.
 
 # GTAIV.EFLC.FusionFix
 
