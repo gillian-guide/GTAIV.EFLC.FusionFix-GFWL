@@ -64,10 +64,7 @@ export void CompatibilityWarnings()
     auto it = std::find_if(std::begin(dlllist), std::end(dlllist), [](auto& i) { return GetModuleHandleW(i.c_str()); });
 
     if (it == std::end(dlllist))
-        if (GetModuleHandleW(L"xlive"))
-            dllName = L"xlive";
-        else
-            return;
+        return;
     else
         dllName = *it;
 
@@ -84,18 +81,6 @@ export void CompatibilityWarnings()
         szContent = L"It requires the latest version of " \
         L"<a href=\"https://github.com/ThirteenAG/Ultimate-ASI-Loader/releases/latest\">Ultimate ASI Loader</a>\n\n" \
         L"<a href=\"https://github.com/ThirteenAG/Ultimate-ASI-Loader/releases/latest\">https://github.com/ThirteenAG/Ultimate-ASI-Loader/releases/latest</a>";
-    }
-    else if (iequals(dllName.stem().wstring(), L"xlive"))
-    {
-        if (IsModuleUAL(GetModuleHandleW(L"xlive")))
-            return;
-
-        szTitle = L"GTAIV.EFLC.FusionFix",
-            szHeader = L"You are running GTA IV The Complete Edition Fusion Fix in backwards compatibility mode.",
-            szContent = L"It requires the latest version of " \
-            L"<a href=\"https://github.com/ThirteenAG/Ultimate-ASI-Loader/releases/latest\">Ultimate ASI Loader</a>" \
-            L" as xlive.dll and " \
-            L"<a href=\"https://github.com/GTAmodding/XLivelessAddon/releases/tag/latest\">XLivelessAddon</a>.";
     }
     else
     {
