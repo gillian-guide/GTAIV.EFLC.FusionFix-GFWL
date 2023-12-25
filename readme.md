@@ -34,7 +34,7 @@ I include the rest of the original repository for the purposes of compiling the 
 
 1. Clone this fork recursively (`git clone https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL.git --recursive`).
 2. Open `premake5.bat` to generate a compileable Visual Studio project.
-3. Compile the project in `build` with whatever tools you prefer - MSVC, Visual Studio or else.
+3. Compile the project in `build` with whatever tools you prefer - MSBuild, Visual Studio etc.
 4. Launch `release.bat` and wait for it to finish.
 5. The complete thing *should* be in the `release` folder.
 
