@@ -27,7 +27,7 @@ You can visit the [Grand Theft Auto RevIVal Discord Server](https://discord.gg/g
 
 ## Installing the GFWL Patch
 
-Install the [official release](https://github.com/ThirteenAG/GTAIV.EFLC.FusionFix/releases/latest) first, then apply [this patch](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/releases/latest) on top of it.
+Install the [official release](https://github.com/ThirteenAG/GTAIV.EFLC.FusionFix/releases/latest) first, remove the `plugins` folder, then apply [this patch](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/releases/latest) on top of it.
 
 ## Compiling FusionFix + GFWL Patch manually
 [![Actions Status: Release](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/actions/workflows/msvc_x86.yml/badge.svg)](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/actions)
