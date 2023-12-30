@@ -22,6 +22,8 @@ std::vector<std::wstring> dlllist = {
     L"NahimicMSIOSD.dll",
     L"nhAsusPhoebusOSD.dll", // ASUS Phoebus
     L"MirillisActionVulkanLayer.dll",
+    L"IVMenuAPI.asi",
+    L"GTAIVExtraOptions.asi",
 };
 
 typedef void(WINAPI* LdrLoadDllFunc) (IN PWCHAR PathToFile OPTIONAL, IN PULONG Flags OPTIONAL, IN PUNICODE_STRING ModuleFileName, OUT HMODULE* ModuleHandle);
