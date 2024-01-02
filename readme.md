@@ -19,7 +19,6 @@ The original repository has no support for GFWL (it does have support for outdat
 - Fix crash on viewing leaderboard. (Commit [f9b19a7](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/f9b19a7bfd59f3845056065e807a6840d5fa32e2). Thanks to [sTc2201](https://github.com/sTc2201) for providing the fix).
 - Change the default option of `RecoilFix` to 0 to avoid being as disadvantage to other players in the multiplayer. (Commit [dc9eb78](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/dc9eb787490f8f96e3c3b64a368cc7e3eab25088))
 - Change the default option of `SkipMenu` to 0 to be able to load into DLC's first. (Commit [61e1041](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/61e104173cb7d4dcab274094b9d6f76d5611db05))
-- Remove `FusionTrees.img` (when building on your own) to combat the issues in Multiplayer. (Commit [5ca56ac](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/5ca56acd11138f9a4bcc77006ad2f2f62c824159))
 
 Keep in mind that you still want additional mods to be used for a pleasant GFWL multiplayer experience, including disabling the mod check to even allow this fork to work.
 
