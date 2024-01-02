@@ -33,6 +33,12 @@
 -rebuild
 -close
 
+-create "..\\..\\..\\release\\update\\GTAIV.EFLC.FusionFix\\FusionTrees.img" "3" "IMG_VERSION_3_ENCRYPTION_TYPE_NONE"
+-importFromDirectory "FusionTrees"
+-rebuild
+-close
+
+
 -create "..\\..\\..\\release\\update\\GTAIV.EFLC.FusionFix\\FusionLights.img" "3" "IMG_VERSION_3_ENCRYPTION_TYPE_NONE"
 -importFromDirectory "FusionLights"
 -rebuild
