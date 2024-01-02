@@ -9,16 +9,17 @@
 **I'M ALSO NOT DOING ANY HEAVY WORK ON THIS FORK, NOR DO I KNOW HOW MODDING WORKS, NOR DO I KNOW HOW TO CODE WITH C++, NOR DO I KNOW HOW DOES ASM WORK, NOR DO I KNOW HOW TO PORT MODS. DON'T ASK ME TO.**
 
 # GFWL Patch (this fork)
+**Just because it says GFWL Patch doesn't mean you can't use this with xliveless.*
 
-The original repository has no support for GFWL (it does have support for outdated patches themselves, however). This fork attempts to mitigate that with several simple fixes:
+The original repository has no support for GFWL (it does have support for outdated patches themselves, however) and blacklists several mods. This fork attempts to mitigate that with several simple fixes:
 
-- Disable the `xlive.dll` check to allow playing on outdated patches without `xlive.dll`. (Commits [9d56aba](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/9d56aba3c554777ada839a0feb318897e8771f6c) and [5ca56ac](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/5ca56acd11138f9a4bcc77006ad2f2f62c824159))
-- Remove unnecessary mods from `dllblocklist.ixx` (Commits [2b7df79](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/2b7df795f2adb0595e763c4ba420783bae755ceb) and [d844297](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/d844297ef9b1b109c8d83f8c6e8112d183bec4ce).)
-- Fix the missing `Multiplayer` button on the phone by changing a simple check in the `spcellphonemain.sco` and `spcellphonenetwork.sco`. (Commits [512e9ad](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/512e9ad67ffa500e8d90ac17ea6ff65ad12a29b6), [9800c9c](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/9800c9c28182bbff88363f3482e4776185641a41), [0b3a699](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/0b3a699f938d5d6d981e9cafd39af7e82d8aec4d) and and [0b3a699](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/0b3a699f938d5d6d981e9cafd39af7e82d8aec4d). Thanks to [ClaudeIII](https://github.com/ClaudeIII) for helping with the ASM part of the code)
-- Fix the Multiplayer Tutorial. Editing the `spcellphonetutorial.sco` and `multitutorial.sco` made the multiplayer tutorial somewhat functional. (Commits [9800c9c](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/9800c9c28182bbff88363f3482e4776185641a41), [0b3a699](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/0b3a699f938d5d6d981e9cafd39af7e82d8aec4d) and [5ca56ac](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/5ca56acd11138f9a4bcc77006ad2f2f62c824159). Thanks to [sTc2201](https://github.com/sTc2201) for providing the `multitutorial.sco` fixes)
-- Fix crash on viewing leaderboard. (Commit [f9b19a7](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/f9b19a7bfd59f3845056065e807a6840d5fa32e2). Thanks to [sTc2201](https://github.com/sTc2201) for providing the fix).
-- Change the default option of `RecoilFix` to 0 to avoid being as disadvantage to other players in the multiplayer. (Commit [dc9eb78](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/dc9eb787490f8f96e3c3b64a368cc7e3eab25088))
-- Change the default option of `SkipMenu` to 0 to be able to load into DLC's first. (Commit [61e1041](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/commit/61e104173cb7d4dcab274094b9d6f76d5611db05))
+- Disable the `xlive.dll` check to allow playing on outdated patches without `xlive.dll`.
+- Remove unnecessary mods from `dllblocklist.ixx`
+- Fix the missing `Multiplayer` button on the phone by changing a simple check in the `spcellphonemain.sco` and `spcellphonenetwork.sco`. Thanks to [ClaudeIII](https://github.com/ClaudeIII) for helping with the ASM part of the code.
+- Fix the Multiplayer Tutorial. Editing the `spcellphonetutorial.sco` and `multitutorial.sco` made the multiplayer tutorial somewhat functional. Thanks to [sTc2201](https://github.com/sTc2201) for providing the `multitutorial.sco` fixes.
+- Fix crash on viewing leaderboard. Thanks to [sTc2201](https://github.com/sTc2201) for providing the fix.
+- Change the default option of `RecoilFix` to 0 to avoid being as disadvantage to other players in the multiplayer.
+- Change the default option of `SkipMenu` to 0 to be able to load into DLC's first.
 
 Keep in mind that you still want additional mods to be used for a pleasant GFWL multiplayer experience, including disabling the mod check to even allow this fork to work.
 
