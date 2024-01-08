@@ -11,7 +11,7 @@
 # GFWL Patch (this fork)
 **Just because it says GFWL Patch doesn't mean you can't use this with xliveless.*
 
-The original repository has no support for GFWL (it does have support for outdated patches themselves, however) and blacklists several mods. This fork attempts to mitigate that with several simple fixes:
+The original repository has no support for GFWL (it does have support for outdated patches themselves, however). This fork attempts to mitigate that with several simple fixes:
 
 - Disable the `xlive.dll` check to allow playing on outdated patches without `xlive.dll`.
 - Remove unnecessary mods from `dllblocklist.ixx`
