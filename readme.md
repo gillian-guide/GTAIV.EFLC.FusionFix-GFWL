@@ -39,6 +39,8 @@ If using ZolikaPatch, also disable following options in `ZolikaPatch.ini`:
 - SkipIntro
 - SkipMenu
 
+You may also use the [Setup Utility](https://github.com/gillian-guide/GTAIVSetupUtilityWPF) afterwards (it takes care of disabling incompatible ZolikaPatch options aswell).
+
 ## Compiling FusionFix + GFWL Patch manually
 [![Actions Status: Release](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/actions/workflows/msvc_x86.yml/badge.svg)](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/actions)
 
