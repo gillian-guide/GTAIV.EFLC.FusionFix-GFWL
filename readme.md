@@ -21,6 +21,9 @@ The original repository has no support for GFWL (it does have support for outdat
 - Change the default option of `RecoilFix` to 0 to avoid being as disadvantage to other players in the multiplayer.
 - Change the default option of `SkipMenu` to 0 to be able to load into DLC's first.
 
+Following changes also deviate from the original code, resulting in a subpar experience in some places:
+- [Commented out a fix for the loading text speed, as it didn't let the game boot for some reason and I have no clue how to work with patterns to even attempt to fix this.](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/blob/5855b9caf1936ac2da3c295ef68e16e0905fa94a/source/frameratevigilante.ixx#L54)
+
 Keep in mind that you still want additional mods to be used for a pleasant GFWL multiplayer experience, including disabling the mod check to even allow this fork to work.
 
 You can visit the [Grand Theft Auto RevIVal Discord Server](https://discord.gg/gtrf) for more information about GFWL multiplayer and people to play with (this patch was also made for these guys). You can also use [HappinessMP](https://happinessmp.net/) to play online on Complete Edition (doesn't allow any mods including FusionFix, however).
