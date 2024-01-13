@@ -13,8 +13,8 @@
 
 The original repository has no support for GFWL (it does have support for outdated patches themselves, however - props to Fusion Team for keeping new features in-tact for old versions). This fork attempts to mitigate that with several simple fixes:
 
-- Disable the `xlive.dll` check to allow playing on outdated patches without `xlive.dll`.
-- Remove unnecessary mods from `dllblocklist.ixx`
+- Disable the `xlive.dll` check to remove the warning message about requiring `xlive.dll` and XLiveLessAddon.
+- Block `IVMenuAPI.asi` and `GTAIVExtraOptions.asi` due to breaking compatibility with FusionFix.
 - Fix the missing `Multiplayer` button on the phone by changing a simple check in the `spcellphonemain.sco` and `spcellphonenetwork.sco`. Thanks to [ClaudeIII](https://github.com/ClaudeIII) for helping with the ASM part of the code.
 - Fix the Multiplayer Tutorial. Editing the `spcellphonetutorial.sco` and `multitutorial.sco` made the multiplayer tutorial somewhat functional. Thanks to [sTc2201](https://github.com/sTc2201) for providing the `multitutorial.sco` fixes.
 - Fix crash on viewing leaderboard. Thanks to [sTc2201](https://github.com/sTc2201) for providing the fix.
