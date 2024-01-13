@@ -35,9 +35,12 @@ Install the [official release](https://github.com/ThirteenAG/GTAIV.EFLC.FusionFi
 If using ZolikaPatch, also disable following options in `ZolikaPatch.ini`:
 - BuildingAlphaFix
 - EmissiveLerpFix
+- BikePhoneAnimsFix
 - BorderlessWindowed
 - CutsceneFixes
 - HighFPSBikePhysicsFix
+- HighFPSSpeedupFix
+- ReversingLightFix
 - OutOfCommissionFix
 - SkipIntro
 - SkipMenu
