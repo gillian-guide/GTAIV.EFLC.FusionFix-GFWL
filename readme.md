@@ -11,6 +11,8 @@
 # GFWL Patch (this fork)
 **Just because it says GFWL Patch doesn't mean you can't use this with xliveless.*
 
+**Some features made after v2.4.2 lack an implementation for nonCE, so in some ways, the experience is subpar to CE.*
+
 The original repository has no support for GFWL (it does have support for outdated patches themselves, however - props to Fusion Team for keeping new features in-tact for old versions). This fork attempts to mitigate that with several simple fixes:
 
 - Disable the `xlive.dll` check to remove the warning message about requiring `xlive.dll` and XLiveLessAddon.
