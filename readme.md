@@ -20,10 +20,7 @@ The original repository has no support for GFWL (it does have support for outdat
 - Fix the missing `Multiplayer` button on the phone by changing a simple check in the `spcellphonemain.sco` and `spcellphonenetwork.sco`. Thanks to [ClaudeIII](https://github.com/ClaudeIII) for helping with the ASM part of the code.
 - Fix the Multiplayer Tutorial. Editing the `spcellphonetutorial.sco` and `multitutorial.sco` made the multiplayer tutorial somewhat functional. Thanks to [sTc2201](https://github.com/sTc2201) for providing the `multitutorial.sco` fixes.
 - Fix crash on viewing leaderboard. Thanks to [sTc2201](https://github.com/sTc2201) for providing the fix.
-- Chang the default option of `SkipMenu` to 0 to be able to load into DLC's first.
-
-Following changes also deviate from the original code, resulting in a subpar experience in some places:
-- [Comment out a fix for the loading text speed, as it didn't let the game boot for some reason and I have no clue how to work with patterns to even attempt to fix this.](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/blob/5855b9caf1936ac2da3c295ef68e16e0905fa94a/source/frameratevigilante.ixx#L54)
+- Change the default option of `SkipMenu` to 0 to be able to load into DLC's first.
 - Change the default option of `RecoilFix` to 0 to avoid being as disadvantage to other players in the multiplayer.
 
 Keep in mind that you still want additional mods to be used for a pleasant GFWL multiplayer experience, including disabling the mod check to even allow this fork to work.
