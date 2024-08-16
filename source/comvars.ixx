@@ -1112,20 +1112,120 @@ public:
         rage::scrEngine::ms_dwNativeTableSize = *find_pattern<2>("8B 35 ? ? ? ? 85 F6 75 06 33 C0 5E C2 04 00 53 57 8B 7C 24 10", "8B 3D ? ? ? ? 85 FF 75 04 33 C0 5F C3").count(2).get(0).get<uint32_t*>(2);
         rage::scrEngine::ms_pNatives = *find_pattern<2>("8B 1D ? ? ? ? 8B CF 8B 04 D3 3B C7 74 19 8D 64 24 00 85 C0", "8B 1D ? ? ? ? 8B CE 8B 04 D3 3B C6 74 17 85 C0").count(2).get(0).get<uint32_t**>(2);
 
-            pattern = hook::pattern("BE ? ? ? ? 8D 44 24 0C 50 8D 46 10 50");
-            if (!pattern.empty()){
-                pCGameConfigReader__ms_imgFiles = *pattern.get_first<decltype(pCGameConfigReader__ms_imgFiles)>(1);
-            }
-            else
-            {
-                pattern = hook::pattern("BE ? ? ? ? 8D 44 24 0C");
-                if (!pattern.empty())
-                    pCGameConfigReader__ms_imgFiles = *pattern.get_first<decltype(pCGameConfigReader__ms_imgFiles)>(1);
-            }
+        pattern = find_pattern("A3 ? ? ? ? A1 ? ? ? ? 33 DB F7 E7 0F 90 C3 6A 00", "A3 ? ? ? ? A1 ? ? ? ? 33 C9 BA ? ? ? ? F7 E2 0F 90 C1 6A 00 6A 10");
+        rage::scrProgram::ms_pGlobals = *pattern.get_first<uintptr_t**>(1);
+        rage::scrProgram::ms_pGlobalsSize = *pattern.get_first<uint32_t*>(6);
 
-            pattern = hook::pattern("A1 ? ? ? ? 83 F8 08 74 05");
-            if (!pattern.empty())
-                CCutscenes__m_dwCutsceneState = *pattern.get_first<uint32_t*>(1);
-        };
+        pattern = find_pattern("80 3D ? ? ? ? ? 53 56 8A FA", "80 3D ? ? ? ? ? 53 8A 5C 24 1C");
+        CMenuManager::bLoadscreenShown = *pattern.get_first<uint8_t*>(2);
+
+        pattern = hook::pattern("56 8B 35 ? ? ? ? 85 F6 75 06");
+        if (!pattern.empty())
+            getNativeAddress = pattern.count(2).get(1).get<void* (__stdcall)(uint32_t)>(0);
+
+        pattern = find_pattern("8B 0D ? ? ? ? 53 56 33 F6", "53 56 8B 35 ? ? ? ? 33 D2");
+        rage::grcDevice::RegisterDeviceCallbacks = pattern.get_first<void(__cdecl)(rage::grcDevice::Functor0, rage::grcDevice::Functor0)>(0);
+
+        pattern = find_pattern("8B 44 24 04 56 8B F1 85 C0 74 38", "8B 44 24 04 85 C0 56 8B F1 74 38");
+        rage::grcDevice::SetCallbackAddr = pattern.get_first<void*>(0);
+
+        pattern = find_pattern("F3 0F 10 05 ? ? ? ? F3 0F 59 05 ? ? ? ? 8B 43 20 53", "F3 0F 10 05 ? ? ? ? F3 0F 59 44 24 ? 83 C4 04 83 7C 24");
+        CTimer::fTimeStep = *pattern.get_first<float*>(4);
+
+        pattern = hook::pattern("BE ? ? ? ? 8D 44 24 0C 50 8D 46 10 50");
+        if (!pattern.empty())
+            CGameConfigReader::ms_imgFiles = *pattern.get_first<decltype(CGameConfigReader::ms_imgFiles)>(1);
+
+        pattern = hook::pattern("A1 ? ? ? ? 83 F8 08 74 05");
+        CCutscenes::m_dwCutsceneState = *pattern.get_first<uint32_t*>(1);
+
+        pattern = find_pattern("80 3D ? ? ? ? ? 74 0E 68 ? ? ? ? 53", "80 3D ? ? ? ? ? 74 13 68");
+        rage::grcWindow::ms_bWindowed = *pattern.get_first<bool*>(2);
+
+        pattern = find_pattern("80 3D ? ? ? ? ? 74 07 BF", "80 3D ? ? ? ? ? 74 07 B8 ? ? ? ? EB 02 33 C0 8B 55 F4");
+        rage::grcWindow::ms_bOnTop = *pattern.get_first<bool*>(2);
+
+        pattern = find_pattern("C6 05 ? ? ? ? ? 85 C0 74 02 FF D0 E8", "C6 05 ? ? ? ? ? 74 02 FF D0 C6 05");
+        rage::grcWindow::ms_bFocusLost = *pattern.get_first<bool*>(2);
+
+        pattern = find_pattern("80 3D ? ? ? ? ? 74 29 80 3D ? ? ? ? ? 75 1A", "80 3D ? ? ? ? ? 74 2F 80 3D ? ? ? ? ? 75 20");
+        rage::grcDevice::ms_bNoBlockOnLostFocus = *pattern.get_first<bool*>(2);
+
+        pattern = find_pattern("8B 35 ? ? ? ? 75 14", "8B 3D ? ? ? ? 75 14 6A 00");
+        rage::pCurrentViewport = *pattern.get_first<rage::grcViewport**>(2);
+
+        pattern = find_pattern("A3 ? ? ? ? E8 ? ? ? ? 83 EC 0C", "A3 ? ? ? ? E8 ? ? ? ? E8 ? ? ? ? 5E");
+        rage::grcTextureFactory::g_pTextureFactory = *pattern.get_first<rage::grcTextureFactoryPC**>(1);
+
+        pattern = find_pattern("A3 ? ? ? ? FF 35 ? ? ? ? 8B 01 FF 35 ? ? ? ? 6A 03 68 ? ? ? ? FF 50 38 8B 0D", "A3 ? ? ? ? 8B 01 8B 40 38 6A 03 68 ? ? ? ? FF D0 8B 0D ? ? ? ? A3 ? ? ? ? 8B 11 8B 52 38");
+        CViewport3DScene::pGBufferRTs = *pattern.get_first<rage::grcRenderTargetPC**>(1);
+
+        pattern = find_pattern("A3 ? ? ? ? FF 35 ? ? ? ? C7 44 24 ? ? ? ? ? 8B 01", "A3 ? ? ? ? C7 44 24 ? ? ? ? ? 8B 01 8B 40 38 6A 03 68 ? ? ? ? FF D0 80 7C 24");
+        CViewport3DScene::pStencilRT = *pattern.get_first<rage::grcRenderTargetPC**>(1);
+
+        pattern = find_pattern("55 8B EC 83 E4 F0 81 EC ? ? ? ? 8B 0D ? ? ? ? 53 0F B7 41 04", "55 8B EC 83 E4 F0 81 EC ? ? ? ? A1 ? ? ? ? 33 C4 89 84 24 ? ? ? ? 8B 0D ? ? ? ? 0F B7 41 04");
+        CTimeCycle::Initialise = pattern.get_first<void(__cdecl)()>(0);
+
+        pattern = find_pattern("56 57 6A 00 FF 74 24 10 8B F9 E8 ? ? ? ? 0F B7 77 0C", "8B 44 24 04 56 57 6A 00 50 8B F9");
+        rage::grmShaderInfo::pfngetParamIndex = pattern.get_first<void*>(0);
+
+        pattern = find_pattern("56 6A 00 FF 74 24 0C E8 ? ? ? ? 8B 35", "8B 44 24 04 56 6A 00 50 E8 ? ? ? ? 8B 35");
+        rage::grmShaderInfo::getGlobalParameterIndexByName = pattern.get_first<int(__cdecl)(const char*)>(0);
+
+        pattern = find_pattern("8B 54 24 08 85 D2 74 62", "56 8B 74 24 0C 85 F6 74 62");
+        rage::grmShaderInfo::shsub_436D70 = safetyhook::create_inline(pattern.get_first(0), rage::grmShaderInfo::setShaderParam);
+
+        pattern = find_pattern("81 C6 ? ? ? ? 42 57", "81 C6 ? ? ? ? 55 A3");
+        rage::grmShaderInfo::globalShaderParameters = *pattern.get_first<rage::grmShaderInfo_Parameter*>(2);
+
+        pattern = find_pattern("8B 15 ? ? ? ? 8D 34 52", "8B 15 ? ? ? ? 83 C2 FF 33 C0");
+        rage::grmShaderInfo::dwGlobalShaderParameterCount = *pattern.get_first<uint32_t*>(2);
+
+        pattern = find_pattern("83 3D ? ? ? ? ? 75 61 8B 44 24 04", "83 3D ? ? ? ? ? 75 5D");
+        rage::grmShaderInfo::shsetGlobalParam = safetyhook::create_inline(pattern.get_first(0), rage::grmShaderInfo::setGlobalParam);
+
+        pattern = find_pattern("55 8B EC 83 E4 F0 81 EC ? ? ? ? 53 8B D9 56 F7 83", "55 8B EC 83 E4 F0 81 EC ? ? ? ? 53 56 57 8B F9 33 DB");
+        CRenderPhaseDeferredLighting_LightsToScreen::shBuildRenderList = safetyhook::create_inline(pattern.get_first(), CRenderPhaseDeferredLighting_LightsToScreen::BuildRenderList);
+
+        pattern = find_pattern("E8 ? ? ? ? F3 0F 10 44 24 ? 51 F3 0F 11 04 24 56 E8 ? ? ? ? 83 C4 08 FF 05", "E8 ? ? ? ? D9 44 24 0C 51 D9 1C 24 56 E8 ? ? ? ? 83 C4 08");
+        CRenderPhaseDeferredLighting_LightsToScreen::shCopyLight = safetyhook::create_inline(injector::GetBranchDestination(pattern.get_first()).get<void*>(), CRenderPhaseDeferredLighting_LightsToScreen::CopyLight);
+
+        pattern = find_pattern("55 8B EC 83 E4 F0 83 EC 18 56 57 8B F9 83 BF", "55 8B EC 83 E4 F0 83 EC 24 53 56 8B D9 83 BB");
+        CRenderPhaseDrawScene::shBuildRenderList = safetyhook::create_inline(pattern.get_first(0), CRenderPhaseDrawScene::BuildRenderList);
+
+        pattern = hook::pattern("F3 0F 11 05 ? ? ? ? A3 ? ? ? ? A3 ? ? ? ? A3 ? ? ? ? F3 0F 11 0D");
+        if (pattern.empty())
+            pattern = hook::pattern("F3 0F 11 05 ? ? ? ? E8 ? ? ? ? 84 C0 74 15 E8 ? ? ? ? 84 C0");
+        CWeather::Rain = *pattern.get_first<float*>(4);
+
+        pattern = find_pattern("A1 ? ? ? ? 83 C4 08 8B CF", "A1 ? ? ? ? 80 3F 04");
+        CWeather::CurrentWeather = *pattern.get_first<CWeather::eWeatherType*>(1);
+
+        pattern = find_pattern("A1 ? ? ? ? 89 46 4C A1", "A1 ? ? ? ? 77 05 A1 ? ? ? ? 80 3F 04");
+        CWeather::NextWeather = *pattern.get_first<CWeather::eWeatherType*>(1);
+
+        pattern = hook::pattern("F3 0F 10 05 ? ? ? ? 8B 44 24 0C 8B 4C 24 04");
+        CWeather::NextWeatherPercentage = *pattern.get_first<float*>(4);
+
+        pattern = find_pattern("BF ? ? ? ? F3 AB B8", "BF ? ? ? ? F3 AB B8 ? ? ? ? B9");
+        RageDirect3DDevice9::g_TexturesBySampler = *pattern.get_first<IDirect3DTexture9**>(1);
+
+        pattern = find_pattern("81 EC ? ? ? ? 8D 04 24 68 ? ? ? ? FF B4 24", "8B 44 24 04 81 EC ? ? ? ? 68");
+        rage::grcTextureFactoryPC::shCreateTexture = safetyhook::create_inline(pattern.get_first(0), rage::grcTextureFactoryPC::CreateTexture);
+
+        pattern = find_pattern("53 8B 5C 24 08 56 33 F6 57 39 35 ? ? ? ? 7E 25 8B 3C B5", "53 8B 5C 24 08 56 57 33 FF 39 3D", "53 8B 5C 24 08 56 33 F6 39 35 ? ? ? ? 57 7E 29 8B 3C B5 ? ? ? ? 8B 07 8B 50 14 53 8B CF FF D2 50 E8 ? ? ? ? 83 C4 08 85 C0");
+        rage::grcTextureFactoryPC::shCreateRT = safetyhook::create_inline(pattern.get_first(0), rage::grcTextureFactoryPC::CreateRT);
+
+        pattern = find_pattern("53 55 56 57 8B F9 85 FF 74 3F", "53 55 8B 6C 24 0C 56 57 EB 06 8D 9B 00 00 00 00 0F B7 51 14 33 FF 83 EA 01 78 26 8B 59 10", "85 C9 53 55 56 57 74 40 8B 6C 24 14 8D 64 24 00");
+        CTxdStore::getEntryByKey = pattern.get_first<rage::grcTexturePC * (__fastcall)(int*, void*, unsigned int)>(0);
+
+        pattern = hook::pattern("68 ? ? ? ? 68 ? ? ? ? 68 ? ? ? ? 68 ? ? ? ? E8 ? ? ? ? 8B C8 E8 ? ? ? ? A3 ? ? ? ? 5E");
+        CTxdStore::at = (int* (__cdecl*)(int))injector::ReadMemory<uint32_t>(pattern.get_first(1), true);
+
+        pattern = find_pattern("A3 ? ? ? ? C7 05 ? ? ? ? ? ? ? ? E8 ? ? ? ? A1", "A3 ? ? ? ? C7 05 ? ? ? ? ? ? ? ? E8 ? ? ? ? 8B 0D");
+        RageDirect3DDevice9::m_pRealDevice = *pattern.get_first<IDirect3DDevice9**>(1);
+
+        pattern = find_pattern("A1 ? ? ? ? 83 F8 08 74 17", "A1 ? ? ? ? 83 F8 08 74 0C");
+        pMenuTab = *pattern.get_first<int32_t*>(1);
     }
 } Common;
