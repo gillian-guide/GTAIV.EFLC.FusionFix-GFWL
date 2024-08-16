@@ -1112,6 +1112,7 @@ public:
         rage::scrEngine::ms_dwNativeTableSize = *find_pattern<2>("8B 35 ? ? ? ? 85 F6 75 06 33 C0 5E C2 04 00 53 57 8B 7C 24 10", "8B 3D ? ? ? ? 85 FF 75 04 33 C0 5F C3").count(2).get(0).get<uint32_t*>(2);
         rage::scrEngine::ms_pNatives = *find_pattern<2>("8B 1D ? ? ? ? 8B CF 8B 04 D3 3B C7 74 19 8D 64 24 00 85 C0", "8B 1D ? ? ? ? 8B CE 8B 04 D3 3B C6 74 17 85 C0").count(2).get(0).get<uint32_t**>(2);
 
+<<<<<<< HEAD
         pattern = find_pattern("A3 ? ? ? ? A1 ? ? ? ? 33 DB F7 E7 0F 90 C3 6A 00", "A3 ? ? ? ? A1 ? ? ? ? 33 C9 BA ? ? ? ? F7 E2 0F 90 C1 6A 00 6A 10");
         rage::scrProgram::ms_pGlobals = *pattern.get_first<uintptr_t**>(1);
         rage::scrProgram::ms_pGlobalsSize = *pattern.get_first<uint32_t*>(6);
@@ -1227,5 +1228,22 @@ public:
 
         pattern = find_pattern("A1 ? ? ? ? 83 F8 08 74 17", "A1 ? ? ? ? 83 F8 08 74 0C");
         pMenuTab = *pattern.get_first<int32_t*>(1);
+=======
+            pattern = hook::pattern("BE ? ? ? ? 8D 44 24 0C 50 8D 46 10 50");
+            if (!pattern.empty()){
+                pCGameConfigReader__ms_imgFiles = *pattern.get_first<decltype(pCGameConfigReader__ms_imgFiles)>(1);
+            }
+            else
+            {
+                pattern = hook::pattern("BE ? ? ? ? 8D 44 24 0C");
+                if (!pattern.empty())
+                    pCGameConfigReader__ms_imgFiles = *pattern.get_first<decltype(pCGameConfigReader__ms_imgFiles)>(1);
+            }
+
+            pattern = hook::pattern("A1 ? ? ? ? 83 F8 08 74 05");
+            if (!pattern.empty())
+                CCutscenes__m_dwCutsceneState = *pattern.get_first<uint32_t*>(1);
+        };
+>>>>>>> dc45eea2fde221919db657a2920bebd8ecfe9d32
     }
 } Common;

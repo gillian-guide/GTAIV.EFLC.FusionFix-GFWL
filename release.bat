@@ -11,4 +11,8 @@ call buildwtd.bat
 call buildshaders.bat
 call buildgxt.bat
 
+<<<<<<< HEAD
 xcopy /s /i data\update\ release\update /exclude:exclude.txt
+=======
+xcopy /s /i data\update\ release\update /exclude:exclude.txt
+>>>>>>> dc45eea2fde221919db657a2920bebd8ecfe9d32
