@@ -22,10 +22,6 @@ std::vector<std::wstring> dlllist = {
     L"NahimicMSIOSD.dll",
     L"nhAsusPhoebusOSD.dll", // ASUS Phoebus
     L"MirillisActionVulkanLayer.dll",
-<<<<<<< HEAD
-=======
-    // GFWL Patch: kept these two in the blocklist (whilst removing the binary encoding) as they *do* break compatibility with FFix
->>>>>>> dc45eea2fde221919db657a2920bebd8ecfe9d32
     L"IVMenuAPI.asi",
     L"GTAIVExtraOptions.asi",
 };
