@@ -9,6 +9,7 @@
 **I'M ALSO NOT DOING ANY HEAVY WORK ON THIS FORK, NOR DO I KNOW HOW MODDING WORKS, NOR DO I KNOW HOW TO CODE WITH C++, NOR DO I KNOW HOW DOES ASM WORK, NOR DO I KNOW HOW TO PORT MODS. DON'T ASK ME TO.**
 
 # GFWL Patch (this fork)
+
 **Just because it says GFWL Patch doesn't mean you can't use this with xliveless.*
 
 **Some features made after v2.4.2 lack an implementation for nonCE, so in some ways, the experience is subpar to CE.*
@@ -21,7 +22,6 @@ The original repository has no support for GFWL (it does have support for outdat
 - Fix the Multiplayer Tutorial. Editing the `spcellphonetutorial.sco` and `multitutorial.sco` made the multiplayer tutorial somewhat functional. Thanks to [sTc2201](https://github.com/sTc2201) for providing the `multitutorial.sco` fixes.
 - Fix crash on viewing leaderboard. Thanks to [sTc2201](https://github.com/sTc2201) for providing the fix.
 - Change the default option of `SkipMenu` to 0 to be able to load into DLC's first.
-- Change the default option of `RecoilFix` to 0 to avoid being as disadvantage to other players in the multiplayer.
 
 Keep in mind that you still want additional mods to be used for a pleasant GFWL multiplayer experience, including disabling the mod check to even allow this fork to work.
 
@@ -31,22 +31,39 @@ You can visit the [Grand Theft Auto RevIVal Discord Server](https://discord.gg/g
 
 Install the [official release](https://github.com/ThirteenAG/GTAIV.EFLC.FusionFix/releases/latest) first, move the files out of the `plugins` folder into the root one, then apply [this patch](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/releases/latest) on top of it.
 
-If using ZolikaPatch, also disable following options in `ZolikaPatch.ini`:
-- BuildingAlphaFix
-- EmissiveLerpFix
+If using ZolikaPatch, also disable following options in `ZolikaPatch.ini` or use the [Setup Utility](https://github.com/gillian-guide/GTAIVSetupUtilityWPF):
+
 - BikePhoneAnimsFix
 - BorderlessWindowed
+- BuildingAlphaFix
+- BuildingDynamicShadows
+- CarDynamicShadowFix
+- CarPartsShadowFix
 - CutsceneFixes
+- DoNotPauseOnMinimize
+- DualVehicleHeadlights
+- EmissiveLerpFix
+- EpisodicVehicleSupport
+- EpisodicWeaponSupport
+- ForceCarHeadlightShadows
+- ForceDynamicShadowsEverywhere
+- ForceShadowsOnObjects
 - HighFPSBikePhysicsFix
 - HighFPSSpeedupFix
-- ReversingLightFix
+- HighQualityReflections
+- ImprovedShaderStreaming
+- MouseFix
+- NewMemorySystem
+- NoLiveryLimit
 - OutOfCommissionFix
+- PoliceEpisodicWeaponSupport
+- RemoveBoundingBoxCulling
+- ReversingLightFix
 - SkipIntro
 - SkipMenu
 
-You may also use the [Setup Utility](https://github.com/gillian-guide/GTAIVSetupUtilityWPF) afterwards (it takes care of disabling incompatible ZolikaPatch options aswell).
-
 ## Compiling FusionFix + GFWL Patch manually
+
 [![Actions Status: Release](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/actions/workflows/msvc_x86.yml/badge.svg)](https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/actions)
 
 I include the rest of the original repository for the purposes of compiling the mod manually (including the patch) if you wish to do so.
